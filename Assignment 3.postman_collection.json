@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "f651be37-ad2a-4237-b9c8-5303525e585e",
+		"name": "Assignment 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25790402"
+	},
+	"item": [
+		{
+			"name": "All Tunes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tunes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tunes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Tunes of Genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/tunes/?filter=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"tunes",
+						""
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "1",
+							"description": "Filters the output to only include tunes with specified genreId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Specific Tune",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/genres/1/tunes/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"genres",
+						"1",
+						"tunes",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Tune",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Old Town Road\",\r\n    \"content\": [\r\n        {\r\n            \"note\": \"E5\",\r\n            \"duration\": \"8n\",\r\n            \"timing\": 0\r\n        },\r\n        {\r\n            \"note\": \"D#5\",\r\n            \"duration\": \"8n\",\r\n            \"timing\": 0.25\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/genres/1/tunes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"genres",
+						"1",
+						"tunes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tune",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Industry Baby\",\r\n    \"genreId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/genres/1/tunes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"genres",
+						"1",
+						"tunes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Genre",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Country\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/genres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"genres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Genres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/genres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"genres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Genre",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/genres/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"genres",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
